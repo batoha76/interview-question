@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пример аккордеона</title>
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            padding: 0 25px;
+        }
+
+        .accordion h3 {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            margin: 0 0 15px;
+            padding: 15px 0;
+            cursor: pointer; /* Добавляем курсор указывающий на возможность клика */
+        }
+
+        .accordion .active {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <h3 onclick="toggleAccordion(1)">1 В чем разница между null и undefined?</h3>
+        <div class="active" id="section1">
+            Разница между null и undefined в JavaScript заключается в следующем:
+            Undefined - это значение, которое указывает на то, что переменная не имеет значения, не была объявлена или ей не было присвоено значение. Это глобальная переменная, существующая в глобальной области видимости. Когда переменная не имеет значения, она считается undefined.
+            Null - это значение, которое явно указывает на отсутствие значения. Null используется для обозначения пустоты или отсутствия значения переменной. Null является объектом и может быть использован для указания отсутствующих свойств объекта.
+            Проверить, является ли значение переменной null или undefined, можно с помощью оператора строгого равенства (===) с null для проверки null и путем проверки на равенство с undefined или сравнения с null для проверки undefined
+            . Каждое из этих значений имеет свои особенности и применение в JavaScript.
+        </div>
+
+        <h3 onclick="toggleAccordion(2)">2 Что такое функциональное программирование и какие особенности JavaScript позволяют говорить о нем как о функциональном языке программирования?</h3>
+        <div class="active" id="section2">
+            2 JavaScript позволяет говорить о нем как о функциональном языке программирования благодаря следующим особенностям:
+            Чистые функции: JavaScript поддерживает чистые функции, которые не меняют внешнего состояния и не имеют побочных эффектов. Это позволяет использовать функции как значения и компоненты более сложных функций, что является одной из основных идей функционального программирования
+            1
+            4
+            .
+            Функции высшего порядка: JavaScript поддерживает функции высшего порядка, такие как функции, возвращающие функции, функции, принимающие функции в качестве аргументов и т.д. Это позволяет создавать более гибкие и мощные программы
+            1
+            4
+            .
+            Императивный и декларативный подходы: JavaScript поддерживает как императивный подход к программированию, где программа выполняет действия в определенном порядке, так и декларативный подход, где программа описывает результат, а язык выполняет логику
+            2
+            . Это позволяет использовать JavaScript для решения задач как в функциональном, так и в императивном стилях программирования.
+            Функциональные интерфейсы: JavaScript позволяет создавать функциональные интерфейсы, которые определяют, как функции должны быть использованы. Это позволяет создавать более модульные и тестируемые программы
+            1
+            .
+            Функциональные объекты: JavaScript позволяет создавать объекты, которые могут быть использованы как функции, что позволяет создавать более мощные и гибкие программы
+            1
+            .
+            Обработка ошибок: JavaScript поддерживает обработку ошибок, что позволяет писать более надежные и устойчивые программы
+            4
+            .
+            Производительность: JavaScript является относительно быстрым языком программирования, что позволяет создавать производительные программы, особенно в сравнении с некоторыми другими функциональными языками, такими как Haskell
+            1
+            .
+            В целом, JavaScript имеет множество особенностей, которые делают его похожим на функциональные языки программирования, такие как Haskell, и позволяют использовать его для решения задач в стиле функционального программирования.
+        </div>
+
+        <h3 onclick="toggleAccordion(3)">3 Что такое функции высшего порядка (high-order functions) в JavaScript?</h3>
+        <div class="active" id="section3">
+            3   Функции высшего порядка (higher-order functions) в JavaScript - это функции, которые могут принимать другие функции в качестве аргументов или возвращать функцию в качестве результата. JavaScript поддерживает функции высшего порядка благодаря тому, что функции рассматриваются как объекты первого класса. Это означает, что функции могут быть использованы как значения, присвоены другой переменной, переданы в качестве аргументов в другие функции или даже возвращены из других функций
+            1
+            3
+            4
+            .
+            Примеры использования функций высшего порядка в JavaScript:
+            Передача функции в качестве аргумента: Вы можете передавать функцию в качестве аргумента другой функции для выполнения определенных действий. Например:
+            javascript
+            function useFunction(arr, fn) {
+                for (let i = 0; i < arr.length; i++) {
+                    fn(arr[i]);
+                }
+            }
+
+            Возвращение функции из другой функции: Вы можете вернуть функцию из другой функции. Например:
+            javascript
+            function calculate(operation) {
+                switch (operation) {
+                    case "ADD":
+                        return function(a, b) {
+                            console.log(`${a} + ${b} = ${a + b}`);
+                        };
+                    case "SUBTRACT":
+                        return function(a, b) {
+                            console.log(`${a} - ${b} = ${a - b}`);
+                        };
+                }
+            }
+
+            Функции высшего порядка позволяют писать более модульный, чистый и гибкий код, улучшая его читаемость и повторное использование. Они являются важным инструментом в функциональном программировании и помогают упростить разработку программ на JavaScript
+        </div>
+        <h3 onclick="toggleAccordion(4)">4 Как работает this в JavaScript?</h3>
+        <div class="active" id="section4">
+            4   Ключевое слово this в JavaScript работает следующим образом:
+            Глобальный контекст: В глобальной области видимости this относится к глобальному объекту, который в браузере является объектом window. Например:
+            javascript
+            function getThis() {
+                return this;
+            }
+            getThis(); // Возвращает объект Window
+
+            Метод объекта: В методе объекта this относится к родительскому объекту. Например:
+            javascript
+            const obj = {
+                name: "John",
+                greet: function() {
+                    console.log(`Hello, ${this.name}!`);
+                }
+            };
+            obj.greet(); // Выведет "Hello, John!"
+
+            Функция: В обычной функции this относится к глобальному объекту. Однако, в строгом режиме (strict mode), this будет равно undefined. Например:
+            javascript
+            function myFunction() {
+                console.log(this);
+            }
+            myFunction(); // Выведет глобальный объект (Window)
+
+            Стрелочные функции: В стрелочных функциях this привязан к контексту, в котором они были созданы, и не могут быть изменены. Например:
+            javascript
+            const arrowFunc = () => {
+                console.log(this);
+            };
+            arrowFunc(); // Выведет контекст, в котором была создана стрелочная функция
+
+            Использование this в JavaScript зависит от контекста выполнения кода и может быть не так просто для понимания из-за своей динамичности. Понимание работы this в различных ситуациях поможет писать более эффективный и чистый код
+        </div>
+        <h3 onclick="toggleAccordion(5)">5 Что такое замыкание в JavaScript?</h3>
+        <div class="active" id="section5">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(6)">6 В чем разница между синхронными и асинхронными функциями в JavaScript?</h3>
+        <div class="active" id="section6">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(7)">7 Как работает DOM (Document Object Model) в JavaScript?</h3>
+        <div class="active" id="section7">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(8)">8 Как работает событие в JavaScript?</h3>
+        <div class="active" id="section8">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(9)">9 Что такое IIFE (Immediately Invoked Function Expression) и в чем его преимущества?
+        </h3>
+        <div class="active" id="section9">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(10)">10 Как работает use strict в JavaScript?</h3>
+        <div class="active" id="section10">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(11)">11 Как работает обратный вызов в JavaScript?</h3>
+        <div class="active" id="section11">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(12)">12 Как работает переменная в JavaScript?</h3>
+        <div class="active" id="section12">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(13)">13 Как работает метод прототипа в JavaScript?</h3>
+        <div class="active" id="section13">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(14)">14 Как работает метод call в JavaScript?</h3>
+        <div class="active" id="section14">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(15)">15 Как работает метод apply в JavaScript?</h3>
+        <div class="active" id="section15">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(16)">16 Как работает метод bind в JavaScript?</h3>
+        <div class="active" id="section16">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(17)">17 Как работает метод splice в JavaScript?</h3>
+        <div class="active" id="section17">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(18)">18 Как работает метод push в JavaScript?</h3>
+        <div class="active" id="section18">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(19)">19 Как работает метод pop в JavaScript?</h3>
+        <div class="active" id="section19">
+            Содержимое 1
+        </div>
+        <h3 onclick="toggleAccordion(20)">20 Как работает метод shift в JavaScript?</h3>
+        <div class="active" id="section20">
+            Содержимое 1
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(section) {
+            var content = document.getElementById("section" + section);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
